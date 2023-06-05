@@ -1,0 +1,82 @@
+[28-Mar-2023 14:54:33 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/skip3428/public_html/sistem-akademik/env/midtrans/Midtrans/Notification.php on line 26
+[28-Mar-2023 16:05:47 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/skip3428/public_html/sistem-akademik/midtrans/Midtrans/Notification.php on line 26
+[28-Mar-2023 16:12:01 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/skip3428/public_html/sistem-akademik/midtrans/Midtrans/Notification.php on line 26
+[28-Mar-2023 16:18:29 Asia/Jakarta] PHP Warning:  require_once(/home/skip3428/public_html/sistem-akademik/midtrans/examples../Midtrans.php): failed to open stream: No such file or directory in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php on line 8
+[28-Mar-2023 16:18:29 Asia/Jakarta] PHP Fatal error:  require_once(): Failed opening required '/home/skip3428/public_html/sistem-akademik/midtrans/examples../Midtrans.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php on line 8
+[28-Mar-2023 16:19:44 Asia/Jakarta] PHP Warning:  require_once(/home/skip3428/public_html/sistem-akademik/midtrans/examples../Midtrans.php): failed to open stream: No such file or directory in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php on line 8
+[28-Mar-2023 16:19:44 Asia/Jakarta] PHP Fatal error:  require_once(): Failed opening required '/home/skip3428/public_html/sistem-akademik/midtrans/examples../Midtrans.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php on line 8
+[28-Mar-2023 16:25:43 Asia/Jakarta] PHP Warning:  require_once(/home/skip3428/public_html/sistem-akademik/midtrans/examples../Midtrans.php): failed to open stream: No such file or directory in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php on line 8
+[28-Mar-2023 16:25:43 Asia/Jakarta] PHP Fatal error:  require_once(): Failed opening required '/home/skip3428/public_html/sistem-akademik/midtrans/examples../Midtrans.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php on line 8
+[28-Mar-2023 16:26:52 Asia/Jakarta] PHP Warning:  require_once(/home/skip3428/public_html/sistem-akademik/midtrans/examples../Midtrans.php): failed to open stream: No such file or directory in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php on line 8
+[28-Mar-2023 16:26:52 Asia/Jakarta] PHP Fatal error:  require_once(): Failed opening required '/home/skip3428/public_html/sistem-akademik/midtrans/examples../Midtrans.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php on line 8
+[28-Mar-2023 16:27:47 Asia/Jakarta] PHP Warning:  require_once(/home/skip3428/public_html/sistem-akademik/midtrans/examples../Midtrans.php): failed to open stream: No such file or directory in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php on line 8
+[28-Mar-2023 16:27:47 Asia/Jakarta] PHP Fatal error:  require_once(): Failed opening required '/home/skip3428/public_html/sistem-akademik/midtrans/examples../Midtrans.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php on line 8
+[28-Mar-2023 16:28:08 Asia/Jakarta] PHP Warning:  require_once(/home/skip3428/public_html/sistem-akademik/midtrans/examples../Midtrans.php): failed to open stream: No such file or directory in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php on line 8
+[28-Mar-2023 16:28:08 Asia/Jakarta] PHP Fatal error:  require_once(): Failed opening required '/home/skip3428/public_html/sistem-akademik/midtrans/examples../Midtrans.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php on line 8
+[28-Mar-2023 16:28:35 Asia/Jakarta] PHP Warning:  require_once(/home/skip3428/public_html/sistem-akademik/midtrans/examples../Midtrans.php): failed to open stream: No such file or directory in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php on line 8
+[28-Mar-2023 16:28:35 Asia/Jakarta] PHP Fatal error:  require_once(): Failed opening required '/home/skip3428/public_html/sistem-akademik/midtrans/examples../Midtrans.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php on line 8
+[28-Mar-2023 16:29:51 Asia/Jakarta] PHP Warning:  require_once(/home/skip3428/public_html/sistem-akademik/midtrans/examples../Midtrans.php): failed to open stream: No such file or directory in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php on line 8
+[28-Mar-2023 16:29:51 Asia/Jakarta] PHP Fatal error:  require_once(): Failed opening required '/home/skip3428/public_html/sistem-akademik/midtrans/examples../Midtrans.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php on line 8
+[28-Mar-2023 16:30:17 Asia/Jakarta] PHP Warning:  require_once(/home/skip3428/public_html/sistem-akademik/midtrans/examples../Midtrans.php): failed to open stream: No such file or directory in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php on line 8
+[28-Mar-2023 16:30:17 Asia/Jakarta] PHP Fatal error:  require_once(): Failed opening required '/home/skip3428/public_html/sistem-akademik/midtrans/examples../Midtrans.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php on line 8
+[28-Mar-2023 16:30:47 Asia/Jakarta] PHP Warning:  require_once(/home/skip3428/public_html/sistem-akademik/midtrans/examples../Midtrans.php): failed to open stream: No such file or directory in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php on line 8
+[28-Mar-2023 16:30:47 Asia/Jakarta] PHP Fatal error:  require_once(): Failed opening required '/home/skip3428/public_html/sistem-akademik/midtrans/examples../Midtrans.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php on line 8
+[28-Mar-2023 16:31:46 Asia/Jakarta] PHP Warning:  require_once(/home/skip3428/public_html/sistem-akademik/midtrans/examples../Midtrans.php): failed to open stream: No such file or directory in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php on line 8
+[28-Mar-2023 16:31:46 Asia/Jakarta] PHP Fatal error:  require_once(): Failed opening required '/home/skip3428/public_html/sistem-akademik/midtrans/examples../Midtrans.php' (include_path='.:/opt/alt/php74/usr/share/pear') in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php on line 8
+[28-Mar-2023 19:27:47 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$fraud_status in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php on line 33
+[28-Mar-2023 20:12:58 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$fraud_status in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php on line 33
+[28-Mar-2023 20:13:14 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$fraud_status in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php on line 33
+[28-Mar-2023 20:13:32 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$fraud_status in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php on line 33
+[28-Mar-2023 20:14:04 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$fraud_status in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php on line 33
+[28-Mar-2023 20:14:06 Asia/Jakarta] PHP Notice:  Undefined property: stdClass::$fraud_status in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php on line 33
+[28-Mar-2023 23:11:14 Asia/Jakarta] PHP Notice:  Undefined variable: notif in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php on line 27
+[28-Mar-2023 23:11:14 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function getResponse() on null in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php:27
+Stack trace:
+#0 {main}
+  thrown in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php on line 27
+[29-Mar-2023 21:27:11 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function Midtrans\query() in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php on line 15
+[29-Mar-2023 21:27:59 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function Midtrans\query() in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php on line 15
+[29-Mar-2023 21:28:59 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function Midtrans\query() in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php on line 15
+[29-Mar-2023 21:30:53 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to undefined function Midtrans\query() in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php:15
+Stack trace:
+#0 {main}
+  thrown in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php on line 15
+[29-Mar-2023 21:47:31 Asia/Jakarta] PHP Notice:  Undefined variable: notif in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php on line 21
+[29-Mar-2023 21:47:31 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function getResponse() on null in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php on line 21
+[29-Mar-2023 21:48:09 Asia/Jakarta] PHP Notice:  Undefined variable: notif in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php on line 21
+[29-Mar-2023 21:48:09 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function getResponse() on null in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php on line 21
+[29-Mar-2023 21:51:51 Asia/Jakarta] PHP Notice:  Undefined variable: notif in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php on line 21
+[29-Mar-2023 21:51:51 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function getResponse() on null in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php on line 21
+[29-Mar-2023 21:53:34 Asia/Jakarta] PHP Notice:  Undefined variable: notif in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php on line 21
+[29-Mar-2023 21:53:34 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function getResponse() on null in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php on line 21
+[29-Mar-2023 21:54:08 Asia/Jakarta] PHP Notice:  Undefined variable: notif in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php on line 21
+[29-Mar-2023 21:54:08 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function getResponse() on null in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php on line 21
+[29-Mar-2023 21:54:50 Asia/Jakarta] PHP Notice:  Undefined variable: notif in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php on line 21
+[29-Mar-2023 21:54:50 Asia/Jakarta] PHP Fatal error:  Uncaught Error: Call to a member function getResponse() on null in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/skip3428/public_html/sistem-akademik/midtrans/examples/notification-handler.php on line 21

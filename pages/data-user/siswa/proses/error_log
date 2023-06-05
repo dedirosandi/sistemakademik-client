@@ -1,0 +1,6 @@
+[09-Jan-2023 01:00:54 Asia/Jakarta] PHP Notice:  Undefined offset: 0 in /home/skip3428/public_html/sistem-akademik/pages/data-user/siswa/proses/proses-status.php on line 5
+[09-Jan-2023 01:00:54 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/skip3428/public_html/sistem-akademik/pages/data-user/siswa/proses/proses-status.php on line 7
+[09-Jan-2023 01:01:05 Asia/Jakarta] PHP Notice:  Undefined offset: 0 in /home/skip3428/public_html/sistem-akademik/pages/data-user/siswa/proses/proses-status.php on line 5
+[09-Jan-2023 01:01:05 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/skip3428/public_html/sistem-akademik/pages/data-user/siswa/proses/proses-status.php on line 7
+[14-Jan-2023 01:55:03 Asia/Jakarta] PHP Notice:  Undefined offset: 0 in /home/skip3428/public_html/sistem-akademik/pages/data-user/siswa/proses/proses-status.php on line 5
+[14-Jan-2023 01:55:03 Asia/Jakarta] PHP Notice:  Trying to access array offset on value of type null in /home/skip3428/public_html/sistem-akademik/pages/data-user/siswa/proses/proses-status.php on line 7
