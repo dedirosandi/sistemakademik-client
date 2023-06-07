@@ -55,3 +55,6 @@ Setelah melakukan instalasi, Anda dapat mengakses sistem akademik sekolah melalu
 2. **Pembayaran SPP:**
    - Setiap siswa akan menerima tagihan pembayaran SPP berdasarkan tingkat pendidikan dan tahun ajaran.
    - Siswa atau orang tua dapat melakukan pembayaran SPP mel
+
+
+Jika minat bisa hubungi via email dedirosandi@yahoo.com
