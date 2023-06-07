@@ -64,8 +64,6 @@ if (isset($_GET["pesan"])) { ?>
                         <th>NISN</th>
                         <th>Nama Siswa</th>
                         <th>Tahun Masuk</th>
-                        <th>Jurusan</th>
-                        <th>Kelas</th>
                         <th>Aksi</th>
                     </tr>
                 </thead>
@@ -87,16 +85,14 @@ if (isset($_GET["pesan"])) { ?>
                             <td><?= $siswa["nisn"]; ?></td>
                             <td><?= $GetAkun["nama"]; ?></td>
                             <td><?= $siswa["tahun_masuk"]; ?></td>
-                            <td><?= $GetJurusan["nama_jurusan"]; ?></td>
-                            <td><?= $GetKelas["nama_kelas"]; ?></td>
                             <td>
                                 <?php if ($GetAkun["status"] == "1") { ?>
                                     <a href="?pages=siswa&act=status-siswa&id=<?= $GetAkun["id"]; ?>" class="btn btn-sm btn-success"><i class="bi bi-person-check"></i></a>
                                 <?php } elseif ($GetAkun["status"] == "0") { ?>
                                     <a href="?pages=siswa&act=status-siswa&id=<?= $GetAkun["id"]; ?>" class="btn btn-sm btn-danger"><i class="bi bi-person-x"></i></a>
                                 <?php } ?>
-                                <a href="?pages=siswa&act=detail-siswa&id=<?= $siswa["id"]; ?>" class="btn btn-sm btn-info"><i class="bi bi-search"></i></a>
-                                <a href="?pages=siswa&act=edit-siswa&id=<?= $siswa["id"]; ?>" class="btn btn-sm btn-primary"><i class="bi bi-pencil-square"></i></a>
+                                <a href="?pages=siswa&act=detail-siswa&id=<?= $GetAkun["id"]; ?>" class="btn btn-sm btn-info"><i class="bi bi-search"></i></a>
+                                <a href="?pages=siswa&act=edit-siswa&id=<?= $GetAkun["id"]; ?>" class="btn btn-sm btn-primary"><i class="bi bi-pencil-square"></i></a>
                             </td>
                         </tr>
                     <?php } ?>

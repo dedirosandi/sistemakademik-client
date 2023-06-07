@@ -14,7 +14,7 @@ if (mysqli_fetch_assoc($Cek)) {
 }
 
 
-$query = mysqli_query($koneksi, "SELECT max(id) as kodeTerbesar FROM tb_user");
+$query = mysqli_query($koneksi, "SELECT max(id) as kodeTerbesar FROM tb_user WHERE role='kepsek'");
 $data = mysqli_fetch_array($query);
 $userid = $data['kodeTerbesar'];
 $urutan = (int) substr($userid, 3, 3);

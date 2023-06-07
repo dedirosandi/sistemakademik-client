@@ -71,15 +71,59 @@
                                  </div>
 
                                  <div class="mb-3 row">
+                                     <label class="col-sm-3 col-form-label col-form-label-sm">Kelas <small style="color: red;">*</small></label>
+                                     <div class="col-sm-9">
+                                         <select name="kelas" class="form-select form-select-sm" aria-label="Default select example" required>
+                                             <option selected value="">Pilih...</option>
+                                             <?php
+                                                $no = 1;
+                                                $GetKelas = query("SELECT * FROM tb_kelas WHERE status='1'");
+                                                foreach ($GetKelas as $kelas) {
+                                                ?>
+                                                 <option value="<?= $kelas["id"]; ?>"><?= $no++; ?>. <?= $kelas["nama_kelas"]; ?></option>
+                                             <?php } ?>
+                                         </select>
+                                     </div>
+                                 </div>
+
+                                 <div class="mb-3 row">
+                                     <label class="col-sm-3 col-form-label col-form-label-sm">Tahun Akademik <small style="color: red;">*</small></label>
+                                     <div class="col-sm-9">
+                                         <select name="tahun_akademik" class="form-select form-select-sm" aria-label="Default select example" required>
+                                             <option selected value="">Pilih...</option>
+                                             <?php
+                                                $no = 1;
+                                                $GetTahunAkademik = query("SELECT * FROM tb_tahun_akademik");
+                                                foreach ($GetTahunAkademik as $tahun_akademik) {
+                                                ?>
+                                                 <option value="<?= $tahun_akademik["id"]; ?>"><?= $no++; ?>. <?= $tahun_akademik["nama_tahun"]; ?></option>
+                                             <?php } ?>
+                                         </select>
+                                     </div>
+                                 </div>
+                                 <div class="mb-3 row">
+                                     <label class="col-sm-3 col-form-label col-form-label-sm">Kurikulum <small style="color: red;">*</small></label>
+                                     <div class="col-sm-9">
+                                         <select name="kurikulum" class="form-select form-select-sm" aria-label="Default select example" required>
+                                             <option selected value="">Pilih...</option>
+                                             <?php
+                                                $no = 1;
+                                                $GetKurikulum = query("SELECT * FROM tb_kurikulum");
+                                                foreach ($GetKurikulum as $kurikulum) {
+                                                ?>
+                                                 <option value="<?= $kurikulum["id"]; ?>"><?= $no++; ?>. <?= $kurikulum["nama_kurikulum"]; ?></option>
+                                             <?php } ?>
+                                         </select>
+                                     </div>
+                                 </div>
+
+                                 <div class="mb-3 row">
 
                                      <label class="col-sm-3 col-form-label col-form-label-sm">NISN <small style="color: red;">*</small></label>
                                      <div class="col-sm-9">
                                          <input type="number" name="nisn" class="form-control form-control-sm" required>
                                      </div>
                                  </div>
-
-
-
                                  <div class="mb-3 row">
                                      <label class="col-sm-3 col-form-label col-form-label-sm">Tahun Masuk</label>
                                      <div class="col-sm-9">
@@ -89,9 +133,6 @@
                                          <input type="text" name="tahun_masuk" class="form-control form-control-sm" value="<?= $year ?>" readonly>
                                      </div>
                                  </div>
-
-
-
                                  <div class="mb-3 row">
                                      <label class="col-sm-3 col-form-label col-form-label-sm">Alamat <small style="color: red;">*</small></label>
                                      <div class="col-sm-9">
@@ -102,12 +143,6 @@
                                      <label class="col-sm-3 col-form-label col-form-label-sm">RT/RW</label>
                                      <div class="col-sm-9">
                                          <input type="text" name="rt_rw" class="form-control form-control-sm" value="00/00">
-                                     </div>
-                                 </div>
-                                 <div class="mb-3 row">
-                                     <label class="col-sm-3 col-form-label col-form-label-sm">Desa <small style="color: red;">*</small></label>
-                                     <div class="col-sm-9">
-                                         <input type="text" name="desa" class="form-control form-control-sm" required>
                                      </div>
                                  </div>
                                  <div class="mb-3 row">

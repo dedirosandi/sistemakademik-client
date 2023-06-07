@@ -1,14 +1,29 @@
 <?php
-$id_tahun_akademik = $_GET["id_tahun_akademik"];
-$GetTahunAkademik = query("SELECT * FROM tb_tahun_akademik WHERE id='$id_tahun_akademik'")[0];
+$get_id_tahun_akademik = $_GET["id_tahun_akademik"];
+$GetTahunAkademik = query("SELECT * FROM tb_tahun_akademik WHERE id='$get_id_tahun_akademik'")[0];
 
-$id_kelas = $_GET["id_kelas"];
-$GetKelas = query("SELECT * FROM tb_kelas WHERE id='$id_kelas'")[0];
+$get_id_kelas = $_GET["id_kelas"];
+$GetKelas = query("SELECT * FROM tb_kelas WHERE id='$get_id_kelas'")[0];
 
 $GetTahun = query("SELECT * FROM tb_tahun_akademik WHERE id='$id_tahun_akademik'")[0];
+
+
+$GetDataSiswa = query("SELECT * FROM tb_data WHERE id_siswa='$id_user'")[0];
+$id_tahun_akademik = $GetDataSiswa["id_tahun_akademik"];
+$id_kelas = $GetDataSiswa["id_kelas"];
+
+
+// $lama = 1; // lama data yang tersimpan di database dan akan otomatis terhapus setelah 1 hari
+
+// // proses untuk melakukan penghapusan data
+
+$query = "DELETE FROM tb_transaksi_pembayaran WHERE transaction_status IN ('1', '2')";
+$hasil = mysqli_query($koneksi, $query);
+// var_dump($hasil);
+// die;
 ?>
 <div class="page-heading">
-    <a class="btn btn-sm btn-success" href="?pages=pembayaran">Kembali</a>
+    <h3>Pembayaran</h3>
 </div>
 <section class="section">
     <div class="card shadow">
@@ -22,13 +37,13 @@ $GetTahun = query("SELECT * FROM tb_tahun_akademik WHERE id='$id_tahun_akademik'
 
                         <div class="col-md-auto">
                             <input type="text" name="pages" value="pembayaran" hidden>
-                            <input type="text" name="act" value="tampil-pembayaran" hidden>
+                            <input type="text" name="act" value="tampil-pembayaran-siswa" hidden>
                             <select name="id_tahun_akademik" class="form-select form-select-sm" aria-label="Default select example" required>
                                 <option value="">Pilih Tahun Akademik</option>
                                 <?php
                                 $no = 1;
-                                $GetTahunAkademik = query("SELECT * FROM tb_tahun_akademik");
-                                foreach ($GetTahunAkademik as $tahun_akademik) {
+                                $GettTahunAkademik = query("SELECT * FROM tb_tahun_akademik WHERE id='$id_tahun_akademik'");
+                                foreach ($GettTahunAkademik as $tahun_akademik) {
                                 ?>
                                     <option value="<?= $tahun_akademik["id"]; ?>" <?php if ($tahun_akademik["id"] == "$id_tahun_akademik") { ?> selected <?php } else { ?> <?php } ?>><?= $tahun_akademik["nama_tahun"]; ?></option>
                                 <?php } ?>
@@ -40,7 +55,7 @@ $GetTahun = query("SELECT * FROM tb_tahun_akademik WHERE id='$id_tahun_akademik'
                                 <?php
 
                                 $no = 1;
-                                $GetKelas = query("SELECT * FROM tb_kelas");
+                                $GetKelas = query("SELECT * FROM tb_kelas WHERE id='$id_kelas'");
                                 foreach ($GetKelas as $kelas) {
                                     $jurusan = $kelas["jurusan"];
                                     $GetJurusan = query("SELECT * FROM tb_jurusan WHERE id='$jurusan'")[0];
@@ -61,46 +76,40 @@ $GetTahun = query("SELECT * FROM tb_tahun_akademik WHERE id='$id_tahun_akademik'
 </section>
 <section class="section">
     <div class="card shadow">
-        <div class="card-header">
-            <a class="btn btn-sm btn-success" href="?pages=pembayaran&act=tambah-pembayaran&id_tahun_akademik=<?= $id_tahun_akademik ?>&id_kelas=<?= $id_kelas ?>">Tambah Pembayaran</a>
-        </div>
         <div class="card-body">
             <table class="table table-striped" id="table1">
                 <thead>
                     <tr>
                         <th>No.</th>
-                        <th>Nama Pembayaran</th>
-                        <th>Nominal</th>
-                        <th>Kelas</th>
-                        <th>Tahun Akademik</th>
-                        <th>Aksi</th>
+                        <th>Hari</th>
+                        <th>Mata Pelajaran</th>
+                        <th>Guru</th>
+                        <th>Jam Mulai</th>
+                        <th>Jam Selesai</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
 
                     $no = 1;
-                    $GetPembayaran = query("SELECT * FROM tb_pembayaran WHERE kelas='$id_kelas' AND tahun_akademik='$id_tahun_akademik'");
-                    foreach ($GetPembayaran as $pembayaran) {
-                        $nama_kelas = $pembayaran["kelas"];
-                        $GetNamaKelas = query("SELECT * FROM tb_kelas WHERE id='$nama_kelas'")[0];
-
-                        $nama_tahun = $pembayaran["tahun_akademik"];
-                        $GetTahunAkademik = query("SELECT * FROM tb_tahun_akademik WHERE id='$nama_tahun'")[0];
+                    $GetJadwal = query("SELECT * FROM tb_jadwal_pelajaran_2 WHERE kelas='$get_id_kelas' AND tahun_akademik='$get_id_tahun_akademik'");
+                    foreach ($GetJadwal as $jadwal) {
+                        $id_mapel = $jadwal["mata_pelajaran"];
+                        $id_guru = $jadwal["guru"];
+                        $GetMapel = query("SELECT * FROM tb_mata_pelajaran_2 WHERE id='$id_mapel'")[0];
+                        $GetGuru = query("SELECT * FROM tb_user WHERE id='$id_guru'")[0];
 
                     ?>
+
                         <tr>
                             <td><?= $no++; ?></td>
-                            <td><?= $pembayaran["nama_pembayaran"]; ?></td>
-                            <td><?= $pembayaran["nominal"]; ?></td>
-                            <td><?= $GetNamaKelas["nama_kelas"]; ?></td>
-                            <td><?= $GetTahunAkademik["nama_tahun"]; ?></td>
-                            <td>
-                                <a href="?pages=pembayaran&act=edit-pembayaran&id_tahun_akademik=<?= $GetTahunAkademik["id"]; ?>&id_kelas=<?= $GetNamaKelas["id"]; ?>&id_pembayaran=<?= $pembayaran["id"]; ?>" class="btn btn-sm btn-primary"><i class="bi bi-pencil-square"></i></a>
-                                <a href="?pages=pembayaran&act=proses-hapus-pembayaran&id=<?= $pembayaran["id"]; ?>" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></a>
-                            </td>
+                            <td><?= $jadwal["hari"]; ?></td>
+                            <td><?= $GetMapel["nama_mata_pelajaran"]; ?></td>
+                            <td><?= $GetGuru["nama"]; ?></td>
+                            <td><?= $jadwal["jam_mulai"]; ?></td>
+                            <td><?= $jadwal["jam_selesai"]; ?></td>
+                        <?php } ?>
                         </tr>
-                    <?php } ?>
                 </tbody>
             </table>
         </div>

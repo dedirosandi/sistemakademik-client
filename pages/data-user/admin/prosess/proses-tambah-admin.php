@@ -19,7 +19,7 @@ $data = mysqli_fetch_array($query);
 $userid = $data['kodeTerbesar'];
 $urutan = (int) substr($userid, 3, 3);
 $urutan++;
-$huruf = "ADMIN-";
+$huruf = "A";
 $userid = $huruf . sprintf("%03s", $urutan);
 
 $insert = mysqli_query($koneksi, "INSERT INTO tb_user VALUES ('$userid','$nama','$username','$password','admin','1')");

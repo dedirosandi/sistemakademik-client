@@ -11,7 +11,6 @@ $no_hp = htmlspecialchars(mysqli_real_escape_string($koneksi, $_POST["no_hp"]));
 $no_tlp = htmlspecialchars(mysqli_real_escape_string($koneksi, $_POST["no_tlp"]));
 $alamat_email = htmlspecialchars(mysqli_real_escape_string($koneksi, $_POST["alamat_email"]));
 $rt_rw = htmlspecialchars(mysqli_real_escape_string($koneksi, $_POST["rt_rw"]));
-$desa = htmlspecialchars(mysqli_real_escape_string($koneksi, $_POST["desa"]));
 $kelurahan = htmlspecialchars(mysqli_real_escape_string($koneksi, $_POST["kelurahan"]));
 $kecamatan = htmlspecialchars(mysqli_real_escape_string($koneksi, $_POST["kecamatan"]));
 $kota = htmlspecialchars(mysqli_real_escape_string($koneksi, $_POST["kota"]));
@@ -33,7 +32,7 @@ $oldImg = $oldData[0]["foto"];
 
 if ($filename == "") {
     $update = mysqli_query($koneksi, "UPDATE tb_user SET nama = '$nama' WHERE id = '$id_user'");
-    $update = mysqli_query($koneksi, "UPDATE tb_info_guru SET tempat_lahir = '$tempat_lahir', tanggal_lahir='$tanggal_lahir', jenis_kelamin='$jenis_kelamin', agama='$agama', no_hp='$no_hp', alamat_email='$alamat_email', rt_rw='$rt_rw', desa='$desa', kelurahan='$kelurahan', kecamatan='$kecamatan', kota='$kota', kode_pos='$kode_pos', bidang_studi='$bidang_studi', status_nikah='$status_nikah', nik='$nik', kewarganegaraan='$kewarganegaraan', npwp='$npwp', timestamp='now()' WHERE id = '$id'");
+    $update = mysqli_query($koneksi, "UPDATE tb_info_guru SET tempat_lahir = '$tempat_lahir', tanggal_lahir='$tanggal_lahir', jenis_kelamin='$jenis_kelamin', agama='$agama', no_hp='$no_hp', alamat_email='$alamat_email', rt_rw='$rt_rw', kelurahan='$kelurahan', kecamatan='$kecamatan', kota='$kota', kode_pos='$kode_pos', bidang_studi='$bidang_studi', status_nikah='$status_nikah', nik='$nik', kewarganegaraan='$kewarganegaraan', npwp='$npwp', timestamp='now()' WHERE id = '$id'");
 
     if ($update) {
         echo "  <script>
@@ -55,7 +54,7 @@ if ($filename == "") {
     unlink("assets/foto/foto-guru/" . $oldImg);
     move_uploaded_file($_FILES['foto']['tmp_name'], 'assets/foto/foto-guru/' . $rand . '_' . $filename);
     $update = mysqli_query($koneksi, "UPDATE tb_user SET nama = '$nama' WHERE id = '$id_user'");
-    $update = mysqli_query($koneksi, "UPDATE tb_info_guru SET tempat_lahir = '$tempat_lahir', tanggal_lahir='$tanggal_lahir', jenis_kelamin='$jenis_kelamin', agama='$agama', no_hp='$no_hp', alamat_email='$alamat_email', rt_rw='$rt_rw', desa='$desa', kelurahan='$kelurahan', kecamatan='$kecamatan', kota='$kota', kode_pos='$kode_pos', bidang_studi='$bidang_studi', status_nikah='$status_nikah', nik='$nik', kewarganegaraan='$kewarganegaraan', npwp='$npwp', foto='$foto', timestamp='now()' WHERE id = '$id'");
+    $update = mysqli_query($koneksi, "UPDATE tb_info_guru SET tempat_lahir = '$tempat_lahir', tanggal_lahir='$tanggal_lahir', jenis_kelamin='$jenis_kelamin', agama='$agama', no_hp='$no_hp', alamat_email='$alamat_email', rt_rw='$rt_rw', kelurahan='$kelurahan', kecamatan='$kecamatan', kota='$kota', kode_pos='$kode_pos', bidang_studi='$bidang_studi', status_nikah='$status_nikah', nik='$nik', kewarganegaraan='$kewarganegaraan', npwp='$npwp', foto='$foto', timestamp='now()' WHERE id = '$id'");
 
     if ($update) {
         echo "  <script>

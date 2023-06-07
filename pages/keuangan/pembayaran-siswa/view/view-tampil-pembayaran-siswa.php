@@ -1,16 +1,16 @@
 <?php
-$id_tahun_akademik = $_GET["id_tahun_akademik"];
-$GetTahunAkademik = query("SELECT * FROM tb_tahun_akademik WHERE id='$id_tahun_akademik'")[0];
+$get_id_tahun_akademik = $_GET["id_tahun_akademik"];
+$GetTahunAkademik = query("SELECT * FROM tb_tahun_akademik WHERE id='$get_id_tahun_akademik'")[0];
 
-$id_kelas = $_GET["id_kelas"];
-$GetKelas = query("SELECT * FROM tb_kelas WHERE id='$id_kelas'")[0];
+$get_id_kelas = $_GET["id_kelas"];
+$GetKelas = query("SELECT * FROM tb_kelas WHERE id='$get_id_kelas'")[0];
 
 $GetTahun = query("SELECT * FROM tb_tahun_akademik WHERE id='$id_tahun_akademik'")[0];
 
 
-$GetDataSiswa = query("SELECT * FROM tb_data_siswa WHERE nama_siswa='$id_user'")[0];
-$id_tahun_akademik = $GetDataSiswa["tahun_akademik"];
-$id_kelas = $GetDataSiswa["kelas"];
+$GetDataSiswa = query("SELECT * FROM tb_data WHERE id_siswa='$id_user'")[0];
+$id_tahun_akademik = $GetDataSiswa["id_tahun_akademik"];
+$id_kelas = $GetDataSiswa["id_kelas"];
 
 
 // $lama = 1; // lama data yang tersimpan di database dan akan otomatis terhapus setelah 1 hari
@@ -42,8 +42,8 @@ $hasil = mysqli_query($koneksi, $query);
 								<option value="">Pilih Tahun Akademik</option>
 								<?php
 								$no = 1;
-								$GetTahunAkademik = query("SELECT * FROM tb_tahun_akademik WHERE id='$id_tahun_akademik'");
-								foreach ($GetTahunAkademik as $tahun_akademik) {
+								$GettTahunAkademik = query("SELECT * FROM tb_tahun_akademik WHERE id='$id_tahun_akademik'");
+								foreach ($GettTahunAkademik as $tahun_akademik) {
 								?>
 									<option value="<?= $tahun_akademik["id"]; ?>" <?php if ($tahun_akademik["id"] == "$id_tahun_akademik") { ?> selected <?php } else { ?> <?php } ?>><?= $tahun_akademik["nama_tahun"]; ?></option>
 								<?php } ?>
@@ -83,6 +83,7 @@ $hasil = mysqli_query($koneksi, $query);
 						<th>No.</th>
 						<th>Nama Pembayaran</th>
 						<th>Nominal</th>
+						<th>Tanggal Tagihan</th>
 						<th>Tanggal Bayar</th>
 						<th>Metode Pembayaran</th>
 						<th>Aksi</th>
@@ -92,17 +93,18 @@ $hasil = mysqli_query($koneksi, $query);
 					<?php
 
 					$no = 1;
-					$GetPembayaran = query("SELECT * FROM tb_pembayaran WHERE kelas='$id_kelas' AND tahun_akademik='$id_tahun_akademik'");
+					$GetPembayaran = query("SELECT * FROM tb_pembayaran WHERE kelas='$get_id_kelas' AND tahun_akademik='$get_id_tahun_akademik'");
 					foreach ($GetPembayaran as $pembayaran) {
 						$id_pembayaran = $pembayaran["id"];
 						$GetTrxPembayaran = query("SELECT * FROM tb_transaksi_pembayaran WHERE id_pembayaran='$id_pembayaran'")[0];
-						
+
 					?>
 
 						<tr>
 							<td><?= $no++; ?></td>
 							<td><?= $pembayaran["nama_pembayaran"]; ?></td>
 							<td>Rp.<?= number_format($pembayaran['nominal'], 0, ',', '.'); ?></td>
+							<td><?= $pembayaran["tanggal_pembayaran"]; ?></td>
 							<td>
 								<?php
 
@@ -110,7 +112,7 @@ $hasil = mysqli_query($koneksi, $query);
 								?>
 									<?= $GetTrxPembayaran["tanggal"] ?>
 								<?php } else { ?>
-									<b>Belum Melakukan Pembayaran</b>
+									<span class="badge bg-danger"><i class="bi bi-x-circle-fill"></i></span>
 								<?php } ?>
 							</td>
 							<td>
@@ -120,7 +122,7 @@ $hasil = mysqli_query($koneksi, $query);
 								?>
 									<?= $GetTrxPembayaran["metode_pembayaran"] ?>
 								<?php } else { ?>
-									<b>Belum Melakukan Pembayaran</b>
+									<span class="badge bg-danger"><i class="bi bi-x-circle-fill"></i></span>
 								<?php } ?>
 							</td>
 							<td>
@@ -130,22 +132,30 @@ $hasil = mysqli_query($koneksi, $query);
 									<input type="text" name="nama_user" value="<?= $id_user ?>" hidden>
 									<input type="text" name="nama_pembayaran" value="<?= $pembayaran["nama_pembayaran"]; ?>" hidden>
 									<input type="text" name="nominal_pembayaran" value="<?= $pembayaran["nominal"]; ?>" hidden>
-									
+
 
 									<?php
 
-								if (!empty($GetTrxPembayaran["transaction_id"])) {
-								?>
-									<span class="btn btn-sm btn-success"><i class="bi bi-check-circle-fill"></i></span>
-								<?php } else { ?>
-									<?php
-									$today = date('Y-m-d');
-									if ($pembayaran["tanggal_pembayaran"] < $today) { ?>
-										<button type="submit" class="btn btn-sm btn-danger"> Bayar</button>
+									if (!empty($GetTrxPembayaran["transaction_id"])) {
+									?>
+										<span class="btn btn-sm btn-success"><i class="bi bi-check-circle-fill"></i></span>
 									<?php } else { ?>
-										<span class="btn btn-sm btn-secondary"> Bayar</span>
+										<?php
+										$today = new DateTime(); // Membuat objek DateTime untuk tanggal hari ini
+										$tanggalPembayaran = new DateTime($pembayaran["tanggal_pembayaran"]); // Membuat objek DateTime dari string tanggal_pembayaran
+
+										if ($tanggalPembayaran <= $today) { // Membandingkan objek DateTime
+										?>
+											<button type="submit" class="btn btn-sm btn-danger"> Bayar</button>
+										<?php
+										} else {
+										?>
+											<span class="btn btn-sm btn-secondary"> Bayar</span>
+										<?php
+										}
+										?>
+
 									<?php } ?>
-								<?php } ?>
 
 								</form>
 

@@ -10,7 +10,6 @@ $agama = htmlspecialchars(mysqli_real_escape_string($koneksi, $_POST["agama"]));
 $no_hp = htmlspecialchars(mysqli_real_escape_string($koneksi, $_POST["no_hp"]));
 $alamat_email = htmlspecialchars(mysqli_real_escape_string($koneksi, $_POST["alamat_email"]));
 $rt_rw = htmlspecialchars(mysqli_real_escape_string($koneksi, $_POST["rt_rw"]));
-$desa = htmlspecialchars(mysqli_real_escape_string($koneksi, $_POST["desa"]));
 $kelurahan = htmlspecialchars(mysqli_real_escape_string($koneksi, $_POST["kelurahan"]));
 $kecamatan = htmlspecialchars(mysqli_real_escape_string($koneksi, $_POST["kecamatan"]));
 $kota = htmlspecialchars(mysqli_real_escape_string($koneksi, $_POST["kota"]));
@@ -21,6 +20,9 @@ $nik = htmlspecialchars(mysqli_real_escape_string($koneksi, $_POST["nik"]));
 $kewarganegaraan = htmlspecialchars(mysqli_real_escape_string($koneksi, $_POST["kewarganegaraan"]));
 $npwp = htmlspecialchars(mysqli_real_escape_string($koneksi, $_POST["npwp"]));
 $password = password_hash($password, PASSWORD_DEFAULT);
+
+// var_dump([$nip, $password, $nama, $tempat_lahir, $tanggal_lahir]);
+// die;
 
 $Cek = mysqli_query($koneksi, "SELECT username FROM tb_user WHERE username = '$nip'");
 if (mysqli_fetch_assoc($Cek)) {
@@ -37,7 +39,7 @@ $ukuran = $_FILES['foto']['size'];
 $ext = pathinfo($filename, PATHINFO_EXTENSION);
 
 
-$query = mysqli_query($koneksi, "SELECT max(id) as kodeTerbesar FROM tb_user");
+$query = mysqli_query($koneksi, "SELECT max(id) as kodeTerbesar FROM tb_user WHERE role='guru'");
 $data = mysqli_fetch_array($query);
 $userid = $data['kodeTerbesar'];
 $urutan = (int) substr($userid, 3, 3);
@@ -45,9 +47,12 @@ $urutan++;
 $huruf = "G";
 $userid = $huruf . sprintf("%03s", $urutan);
 
+// var_dump($userid);
+// die;
+
 if ($filename == "") {
 	$insert = mysqli_query($koneksi, "INSERT INTO tb_user VALUES ('$userid','$nama','$nip','$password','guru','1')");
-	$insert = mysqli_query($koneksi, "INSERT INTO tb_info_guru VALUES ('','$tempat_lahir','$tanggal_lahir','$jenis_kelamin','$agama','$no_hp','$alamat_email','$rt_rw','$desa','$kelurahan','$kecamatan','$kota','$kode_pos','$bidang_studi','$status_nikah','$nik','$kewarganegaraan','$npwp','',now(),'$userid')");
+	$insert = mysqli_query($koneksi, "INSERT INTO tb_info_guru VALUES ('','$tempat_lahir','$tanggal_lahir','$jenis_kelamin','$agama','$no_hp','$alamat_email','$rt_rw','$kelurahan','$kecamatan','$kota','$kode_pos','$bidang_studi','$status_nikah','$nik','$kewarganegaraan','$npwp','',now(),'$userid')");
 
 	if ($insert) {
 		echo "  <script>
@@ -66,7 +71,7 @@ if ($filename == "") {
 	$foto = $rand . '_' . $filename;
 	move_uploaded_file($_FILES['foto']['tmp_name'], 'assets/foto/foto-guru/' . $rand . '_' . $filename);
 	$insert = mysqli_query($koneksi, "INSERT INTO tb_user VALUES ('$userid','$nama','$nip','$password','guru','1')");
-	$insert = mysqli_query($koneksi, "INSERT INTO tb_info_guru VALUES ('','$tempat_lahir','$tanggal_lahir','$jenis_kelamin','$agama','$no_hp','$alamat_email','$rt_rw','$desa','$kelurahan','$kecamatan','$kota','$kode_pos','$bidang_studi','$status_nikah','$nik','$kewarganegaraan','$npwp','$foto',now(),'$userid')");
+	$insert = mysqli_query($koneksi, "INSERT INTO tb_info_guru VALUES ('','$tempat_lahir','$tanggal_lahir','$jenis_kelamin','$agama','$no_hp','$alamat_email','$rt_rw','$kelurahan','$kecamatan','$kota','$kode_pos','$bidang_studi','$status_nikah','$nik','$kewarganegaraan','$npwp','$foto',now(),'$userid')");
 
 	if ($insert) {
 		echo "  <script>

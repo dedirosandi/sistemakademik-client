@@ -55,7 +55,7 @@ include "env/session.php"
 				<?php
 				$pages = @$_GET['pages'];
 				$act = @$_GET['act'];
-				$sub = @$_GET['sub'];
+				// $sub = @$_GET['sub'];
 
 				if ($pages == "dashboard") {
 					if ($_SESSION["role"] == "admin") {
@@ -201,6 +201,12 @@ include "env/session.php"
 					} else if ($act == "proses-hapus-jadwal-pelajaran-2") {
 						include "pages/data-akademik/jadwal-pelajaran-2/proses/proses-hapus-jadwal-pelajaran-2.php";
 					}
+				} else if ($pages == "jadwal-pelajaran-siswa") {
+					if ($act == "") {
+						include "pages/data-akademik/jadwal-pelajaran-siswa/view/view-jadwal-pelajaran-siswa.php";
+					} else if ($act == "tampil-jadwal-pelajaran-siswa") {
+						include "pages/data-akademik/jadwal-pelajaran-siswa/view/view-tampil-jadwal-pelajaran-siswa.php";
+					}
 				} else if ($pages == "mata-pelajaran") {
 					if ($act == "") {
 						include "pages/data-akademik/mata-pelajaran/view/view-mata-pelajaran.php";
@@ -239,6 +245,10 @@ include "env/session.php"
 							include "pages/keuangan/pembayaran/proses/proses-tambah-pembayaran.php";
 						} else if ($act == "hapus-pembayaran") {
 							include "pages/keuangan/pembayaran/proses/proses-hapus-pembayaran.php";
+						} else if ($act == "edit-pembayaran") {
+							include "pages/keuangan/pembayaran/view/view-edit-pembayaran.php";
+						} else if ($act == "proses-edit-pembayaran") {
+							include "pages/keuangan/pembayaran/proses/proses-edit-pembayaran.php";
 						}
 					} elseif ($_SESSION["role"] == "siswa") {
 						if ($act == "") {
@@ -332,6 +342,10 @@ include "env/session.php"
 						include "pages/dokumen/proses/proses-tambah-dokumen.php";
 					} else if ($act == "hapus-dokumen") {
 						include "pages/dokumen/proses/proses-hapus-dukumen.php";
+					}
+				} elseif ($pages == "dokumen-surat") {
+					if ($act == "") {
+						include "pages/dokumen/view/view-dokumen-siswa.php";
 					}
 				} elseif ($pages == "logout") {
 					include "auth/logout.php";

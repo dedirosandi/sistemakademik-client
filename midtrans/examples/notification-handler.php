@@ -39,7 +39,7 @@ if ($transaction == 'settlement') {
     // mysqli_query($koneksi, "update tb_transaksi_pembayaran set transaction_status='3' , transaction_id='$transaction_id' where order_id='$order_id'");
     mysqli_query($koneksi, "UPDATE tb_transaksi_pembayaran SET transaction_status='3', transaction_id='$transaction_id', metode_pembayaran='$type' WHERE order_id = '$order_id'");
 } else if ($transaction == 'pending') {
-    mysqli_query($koneksi, "update tb_transaksi_pembayaran set transaction_status='2', transaction_id='$transaction_id', metode_pembayaran='$type' where order_id='$order_id'");
+    mysqli_query($koneksi, "update tb_transaksi_pembayaran set transaction_status='2' where order_id='$order_id'");
 } else if ($transaction == 'deny') {
     mysqli_query($koneksi, "update tb_transaksi_pembayaran set transaction_status='1', transaction_id='$transaction_id' where order_id='$order_id'");
 } else if ($transaction == 'expire') {

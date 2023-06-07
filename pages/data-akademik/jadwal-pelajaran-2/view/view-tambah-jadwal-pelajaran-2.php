@@ -96,6 +96,27 @@ if (isset($_GET["pesan"])) { ?>
                         <div class="col-sm-9">
                             <select name="guru" id="guru" class="form-select form-select-sm" aria-label="Default select example">
                                 <option value="">Pilih...</option>
+                                <?php
+                                $no = 1;
+                                $GetGuru = query("SELECT * FROM tb_guru_pelajaran_2");
+                                foreach ($GetGuru as $guru) {
+                                    $id_guru = $guru["id_guru"];
+                                    $GetNamaGuru = query("SELECT * FROM tb_user WHERE id='$id_guru'")[0];
+                                    $GetMPelajaran2 = query("SELECT * FROM tb_jadwal_pelajaran_2 WHERE guru='$id_guru' AND kelas='$id_kelas' AND tahun_akademik='$id_tahun_akademik'")[0];
+                                ?>
+                                    <?php
+
+                                    if (!empty($GetMPelajaran2["mata_pelajaran"])) {
+                                    ?>
+                                        <option disabled value="<?= $guru["id_guru"]; ?>"><?= $GetNamaGuru["nama"]; ?></option>
+                                    <?php } else { ?>
+                                        <option value="<?= $guru["id_guru"]; ?>"><?= $GetNamaGuru["nama"]; ?></option>
+                                    <?php } ?>
+
+
+
+                                <?php } ?>
+
                             </select>
                         </div>
                     </div>

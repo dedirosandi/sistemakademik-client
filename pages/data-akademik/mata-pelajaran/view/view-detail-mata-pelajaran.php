@@ -94,7 +94,6 @@ if (isset($_GET["pesan"])) { ?>
                             <td><?= $no++; ?></td>
                             <td><?= $GetGuruPelajaran["nama"]; ?></td>
                             <td>
-                                <a href="?pages=mata-pelajaran&act=detail-mata-pelajaran&id=<?= $guru_pelajaran["id"]; ?>" class="btn btn-sm btn-primary"><i class="bi bi-eye"></i></a>
                                 <a href="?pages=mata-pelajaran&act=proses-hapus-guru-pelajaran&id=<?= $guru_pelajaran["id"]; ?>" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></a>
                             </td>
                         </tr>

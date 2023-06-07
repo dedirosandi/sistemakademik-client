@@ -47,7 +47,7 @@
                                  <?php } else { ?>
                                      <img width="180" src="../../../../assets/images/faces/1.jpg" class="img-thumbnail" alt="...">
                                  <?php } ?>
-                                 <a href="?pages=siswa&act=edit-siswa&id=<?= $GetInfoSiswa["id"]; ?>" class="btn btn-block btn-success">Edit Profile</a>
+                                 <a href="?pages=siswa&act=edit-siswa&id=<?= $GetUser["id"]; ?>" class="btn btn-block btn-success">Edit Profile</a>
 
                              </div>
                              <div class="col-lg-5">
@@ -89,12 +89,6 @@
                                      <label class="col-sm-3 col-form-label col-form-label-sm">RT/RW</label>
                                      <div class="col-sm-9">
                                          <input type="text" name="rt_rw" class="form-control form-control-sm" value="<?= $GetInfoSiswa["rt_rw"]; ?>" disabled>
-                                     </div>
-                                 </div>
-                                 <div class="mb-3 row">
-                                     <label class="col-sm-3 col-form-label col-form-label-sm">Desa</label>
-                                     <div class="col-sm-9">
-                                         <input type="text" name="desa" class="form-control form-control-sm" value="<?= $GetInfoSiswa["desa"]; ?>" disabled>
                                      </div>
                                  </div>
                                  <div class="mb-3 row">

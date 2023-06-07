@@ -14,8 +14,8 @@
                  <span>Rangkuman Nilai</span>
              </a>
          </li>
-         <li class="sidebar-item <?php if ($pages == "jadwal-pelajaran") { ?> active <?php } else { ?> <?php } ?>">
-             <a href="?pages=jadwal-pelajaran" class='sidebar-link'>
+         <li class="sidebar-item <?php if ($pages == "jadwal-pelajaran-siswa") { ?> active <?php } else { ?> <?php } ?>">
+             <a href="?pages=jadwal-pelajaran-siswa" class='sidebar-link'>
                  <i class="bi bi-calendar2-week-fill"></i>
                  <span>Jadwal Pelajaran</span>
              </a>

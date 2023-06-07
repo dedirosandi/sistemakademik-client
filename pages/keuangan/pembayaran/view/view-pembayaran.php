@@ -97,7 +97,7 @@ if (isset($_GET["pesan"])) { ?>
                             <td><?= $GetNamaKelas["nama_kelas"]; ?></td>
                             <td><?= $GetTahunAkademik["nama_tahun"]; ?></td>
                             <td>
-                                <a href="?pages=pembayaran&act=edit-pembayaran&id=<?= $pembayaran["id"]; ?>" class="btn btn-sm btn-primary"><i class="bi bi-pencil-square"></i></a>
+                                <a href="?pages=pembayaran&act=edit-pembayaran&id_tahun_akademik=<?= $GetTahunAkademik["id"]; ?>&id_kelas=<?= $GetNamaKelas["id"]; ?>&id_pembayaran=<?= $pembayaran["id"]; ?>" class="btn btn-sm btn-primary"><i class="bi bi-pencil-square"></i></a>
                                 <a href="?pages=pembayaran&act=hapus-pembayaran&id=<?= $pembayaran["id"]; ?>" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i></a>
                             </td>
                         </tr>

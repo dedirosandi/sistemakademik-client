@@ -94,12 +94,6 @@
                          </div>
                      </div>
                      <div class="mb-3 row">
-                         <label class="col-sm-3 col-form-label col-form-label-sm">Desa</label>
-                         <div class="col-sm-9">
-                             <input type="text" class="form-control form-control-sm" value="<?= $GetInfoGuru["desa"]; ?>" disabled>
-                         </div>
-                     </div>
-                     <div class="mb-3 row">
                          <label class="col-sm-3 col-form-label col-form-label-sm">Kelurahan</label>
                          <div class="col-sm-9">
                              <input type="text" class="form-control form-control-sm" value="<?= $GetInfoGuru["kelurahan"]; ?>" disabled>

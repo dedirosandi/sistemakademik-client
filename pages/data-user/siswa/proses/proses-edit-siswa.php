@@ -7,7 +7,6 @@ $nisn = htmlspecialchars(mysqli_real_escape_string($koneksi, $_POST["nisn"]));
 $tahun_masuk = htmlspecialchars(mysqli_real_escape_string($koneksi, $_POST["tahun_masuk"]));
 $alamat = htmlspecialchars(mysqli_real_escape_string($koneksi, $_POST["alamat"]));
 $rt_rw = htmlspecialchars(mysqli_real_escape_string($koneksi, $_POST["rt_rw"]));
-$desa = htmlspecialchars(mysqli_real_escape_string($koneksi, $_POST["desa"]));
 $kelurahan = htmlspecialchars(mysqli_real_escape_string($koneksi, $_POST["kelurahan"]));
 $kecamatan = htmlspecialchars(mysqli_real_escape_string($koneksi, $_POST["kecamatan"]));
 $kota = htmlspecialchars(mysqli_real_escape_string($koneksi, $_POST["kota"]));
@@ -45,7 +44,7 @@ $oldImg = $oldData[0]["foto"];
 
 if ($filename == "") {
     $update = mysqli_query($koneksi, "UPDATE tb_user SET nama = '$nama' WHERE id = '$id_user'");
-    $update = mysqli_query($koneksi, "UPDATE tb_info_siswa SET nisn = '$nisn', tahun_masuk='$tahun_masuk', alamat = '$alamat', rt_rw = '$rt_rw', desa = '$desa', kelurahan = '$kelurahan', kecamatan = '$kecamatan', kota = '$kota', kode_pos = '$kode_pos', status_awal = '$status_awal', nik = '$nik',  tempat_lahir = '$tempat_lahir', tanggal_lahir = '$tanggal_lahir', jenis_kelamin = '$jenis_kelamin', agama = '$agama', no_tlp = '$no_tlp', alamat_email = '$alamat_email', skhun = '$skhun', nama_ayah = '$nama_ayah', tahun_lahir_ayah = '$tahun_lahir_ayah', pendidikan_terakhir_ayah = '$pendidikan_terakhir_ayah', pekerjaan_ayah = '$pekerjaan_ayah', penghasilan_ayah = '$penghasilan_ayah', no_tlp_ayah = '$no_tlp_ayah', nama_ibu = '$nama_ibu', tahun_lahir_ibu = '$tahun_lahir_ibu', pendidikan_terakhir_ibu = '$pendidikan_terakhir_ibu', pekerjaan_ibu = '$pekerjaan_ibu', penghasilan_ibu = '$penghasilan_ibu', no_tlp_ibu = '$no_tlp_ibu', timestamp='now()' WHERE id = '$id'");
+    $update = mysqli_query($koneksi, "UPDATE tb_info_siswa SET nisn = '$nisn', tahun_masuk='$tahun_masuk', alamat = '$alamat', rt_rw = '$rt_rw', kelurahan = '$kelurahan', kecamatan = '$kecamatan', kota = '$kota', kode_pos = '$kode_pos', status_awal = '$status_awal', nik = '$nik',  tempat_lahir = '$tempat_lahir', tanggal_lahir = '$tanggal_lahir', jenis_kelamin = '$jenis_kelamin', agama = '$agama', no_tlp = '$no_tlp', alamat_email = '$alamat_email', skhun = '$skhun', nama_ayah = '$nama_ayah', tahun_lahir_ayah = '$tahun_lahir_ayah', pendidikan_terakhir_ayah = '$pendidikan_terakhir_ayah', pekerjaan_ayah = '$pekerjaan_ayah', penghasilan_ayah = '$penghasilan_ayah', no_tlp_ayah = '$no_tlp_ayah', nama_ibu = '$nama_ibu', tahun_lahir_ibu = '$tahun_lahir_ibu', pendidikan_terakhir_ibu = '$pendidikan_terakhir_ibu', pekerjaan_ibu = '$pekerjaan_ibu', penghasilan_ibu = '$penghasilan_ibu', no_tlp_ibu = '$no_tlp_ibu', timestamp='now()' WHERE id = '$id'");
 
     if ($update) {
         echo "  <script>
@@ -67,7 +66,7 @@ if ($filename == "") {
     unlink("assets/foto/foto-siswa/" . $oldImg);
     move_uploaded_file($_FILES['foto']['tmp_name'], 'assets/foto/foto-siswa/' . $rand . '_' . $filename);
     $update = mysqli_query($koneksi, "UPDATE tb_user SET nama = '$nama' WHERE id = '$id_user'");
-    $update = mysqli_query($koneksi, "UPDATE tb_info_siswa SET nisn = '$nisn', tahun_masuk='$tahun_masuk', alamat = '$alamat', rt_rw = '$rt_rw', desa = '$desa', kelurahan = '$kelurahan', kecamatan = '$kecamatan', kota = '$kota', kode_pos = '$kode_pos', status_awal = '$status_awal', nik = '$nik',  tempat_lahir = '$tempat_lahir', tanggal_lahir = '$tanggal_lahir', jenis_kelamin = '$jenis_kelamin', agama = '$agama', no_tlp = '$no_tlp', alamat_email = '$alamat_email', skhun = '$skhun', nama_ayah = '$nama_ayah', tahun_lahir_ayah = '$tahun_lahir_ayah', pendidikan_terakhir_ayah = '$pendidikan_terakhir_ayah', pekerjaan_ayah = '$pekerjaan_ayah', penghasilan_ayah = '$penghasilan_ayah', no_tlp_ayah = '$no_tlp_ayah', nama_ibu = '$nama_ibu', tahun_lahir_ibu = '$tahun_lahir_ibu', pendidikan_terakhir_ibu = '$pendidikan_terakhir_ibu', pekerjaan_ibu = '$pekerjaan_ibu', penghasilan_ibu = '$penghasilan_ibu', no_tlp_ibu = '$no_tlp_ibu', foto='$foto', timestamp='now()' WHERE id = '$id'");
+    $update = mysqli_query($koneksi, "UPDATE tb_info_siswa SET nisn = '$nisn', tahun_masuk='$tahun_masuk', alamat = '$alamat', rt_rw = '$rt_rw', kelurahan = '$kelurahan', kecamatan = '$kecamatan', kota = '$kota', kode_pos = '$kode_pos', status_awal = '$status_awal', nik = '$nik',  tempat_lahir = '$tempat_lahir', tanggal_lahir = '$tanggal_lahir', jenis_kelamin = '$jenis_kelamin', agama = '$agama', no_tlp = '$no_tlp', alamat_email = '$alamat_email', skhun = '$skhun', nama_ayah = '$nama_ayah', tahun_lahir_ayah = '$tahun_lahir_ayah', pendidikan_terakhir_ayah = '$pendidikan_terakhir_ayah', pekerjaan_ayah = '$pekerjaan_ayah', penghasilan_ayah = '$penghasilan_ayah', no_tlp_ayah = '$no_tlp_ayah', nama_ibu = '$nama_ibu', tahun_lahir_ibu = '$tahun_lahir_ibu', pendidikan_terakhir_ibu = '$pendidikan_terakhir_ibu', pekerjaan_ibu = '$pekerjaan_ibu', penghasilan_ibu = '$penghasilan_ibu', no_tlp_ibu = '$no_tlp_ibu', foto='$foto', timestamp='now()' WHERE id = '$id'");
 
     if ($update) {
         echo "  <script>

@@ -1,21 +1,20 @@
 <?php
 include_once "env/page-session-admin.php";
 $id = $_GET["id"];
-$GetInfoSiswa = query("SELECT * FROM tb_info_siswa WHERE id = '$id'")[0];
-$id_user = $GetInfoSiswa["id_user"];
+// var_dump($id);
+// die;
+
+$GetInfoSiswa = query("SELECT * FROM tb_info_siswa WHERE id_user = '$id'")[0];
+$iduser = $GetInfoSiswa["id_user"];
 $jurusan = $GetInfoSiswa["jurusan"];
 
 $GetJurusan = query("SELECT * FROM tb_jurusan WHERE id = '$jurusan'");
-$GetDataSiswa = query("SELECT * FROM tb_data_siswa WHERE nama_siswa = '$id_user'")[0];
-$id_kelas = $GetDataSiswa["kelas"];
+$GetDataSiswa = query("SELECT * FROM tb_data WHERE id_siswa = '$id'")[0];
+$id_kelas = $GetDataSiswa["id_kelas"];
 $GetKelas = query("SELECT * FROM tb_kelas WHERE id='$id_kelas'");
 // var_dump($GetKelas);
 // die;
-
-
-
-
-$GetUser = query("SELECT * FROM tb_user WHERE id = '$id_user'")[0];
+$GetUser = query("SELECT * FROM tb_user WHERE id = '$id'")[0];
 ?>
 <div class="page-title mb-3">
     <div class="row">
@@ -84,12 +83,7 @@ $GetUser = query("SELECT * FROM tb_user WHERE id = '$id_user'")[0];
                                         <input type="text" name="rt_rw" class="form-control form-control-sm" value="<?= $GetInfoSiswa["rt_rw"]; ?>">
                                     </div>
                                 </div>
-                                <div class="mb-3 row">
-                                    <label class="col-sm-3 col-form-label col-form-label-sm">Desa</label>
-                                    <div class="col-sm-9">
-                                        <input type="text" name="desa" class="form-control form-control-sm" value="<?= $GetInfoSiswa["desa"]; ?>">
-                                    </div>
-                                </div>
+
                                 <div class="mb-3 row">
                                     <label class="col-sm-3 col-form-label col-form-label-sm">Kelurahan </label>
                                     <div class="col-sm-9">
@@ -102,8 +96,6 @@ $GetUser = query("SELECT * FROM tb_user WHERE id = '$id_user'")[0];
                                         <input type="text" name="kecamatan" class="form-control form-control-sm" value="<?= $GetInfoSiswa["kelurahan"]; ?>">
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-lg-6">
                                 <div class="mb-3 row">
                                     <label class="col-sm-3 col-form-label col-form-label-sm">Kota </label>
                                     <div class="col-sm-9">
@@ -130,6 +122,9 @@ $GetUser = query("SELECT * FROM tb_user WHERE id = '$id_user'")[0];
                                         </select>
                                     </div>
                                 </div>
+                            </div>
+                            <div class="col-lg-6">
+
 
 
                                 <div class="mb-3 row">

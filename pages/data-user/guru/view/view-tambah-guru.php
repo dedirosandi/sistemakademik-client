@@ -99,19 +99,13 @@
                           <div class="mb-3 row">
                               <label class="col-sm-3 col-form-label col-form-label-sm">Alamat Email</label>
                               <div class="col-sm-9">
-                                  <input type="text" name="alamat_email" class="form-control form-control-sm">
+                                  <input type="email" name="alamat_email" class="form-control form-control-sm">
                               </div>
                           </div>
                           <div class="mb-3 row">
                               <label class="col-sm-3 col-form-label col-form-label-sm">RT/RW</label>
                               <div class="col-sm-9">
                                   <input type="text" name="rt_rw" class="form-control form-control-sm" value="00/00">
-                              </div>
-                          </div>
-                          <div class="mb-3 row">
-                              <label class="col-sm-3 col-form-label col-form-label-sm">Desa</label>
-                              <div class="col-sm-9">
-                                  <input type="text" name="desa" class="form-control form-control-sm">
                               </div>
                           </div>
                           <div class="mb-3 row">

@@ -15,54 +15,7 @@ if (isset($_GET["pesan"])) { ?>
     <?php } ?>
 <?php
 } ?>
-<section class="section">
-    <div class="card shadow">
-        <div class="card-header">
-            <form action="" method="get">
-                <div class="container">
-                    <div class="row">
-                        <div class="col">
-                            <!-- <a href="?pages=pembayaran&act=tambah-pembayaran-multiple" class="btn btn-sm btn-success">Tambah Pembayaran Multiple</a> -->
-                            <h5><i class="bi bi-funnel-fill"></i> Pilih Untuk tampilkan</h5>
-                        </div>
-                        <div class="col-md-auto">
-                            <input type="text" name="pages" value="pembayaran" hidden>
-                            <input type="text" name="act" value="tampil-pembayaran" hidden>
-                            <select name="id_tahun_akademik" class="form-select form-select-sm" aria-label="Default select example" required>
-                                <option selected value="">Pilih Tahun Akademik</option>
-                                <?php
-                                $no = 1;
-                                $GetTahunAkademik = query("SELECT * FROM tb_tahun_akademik");
-                                foreach ($GetTahunAkademik as $tahun_akademik) {
-                                ?>
-                                    <option value="<?= $tahun_akademik["id"]; ?>"><?= $tahun_akademik["nama_tahun"]; ?></option>
-                                <?php } ?>
-                            </select>
-                        </div>
-                        <div class="col-3">
-                            <select name="id_kelas" class="form-select form-select-sm" aria-label="Default select example" required>
-                                <option selected value="">Pilih Kelas</option>
-                                <?php
-                                $no = 1;
-                                $GetKelas = query("SELECT * FROM tb_kelas");
-                                foreach ($GetKelas as $kelas) {
-                                    $jurusan = $kelas["jurusan"];
-                                    $GetJurusan = query("SELECT * FROM tb_jurusan WHERE id='$jurusan'")[0];
-                                ?>
-                                    <option value="<?= $kelas["id"]; ?>"><?= $kelas["nama_kelas"]; ?> - <?= $GetJurusan["nama_jurusan"]; ?></option>
-                                <?php } ?>
-                            </select>
 
-                        </div>
-                        <div class="col-1">
-                            <button type="submit" class="btn btn-sm btn-success">Lihat</button>
-                        </div>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-</section>
 <section class="section">
     <div class="card shadow">
         <div class="card-body">
@@ -73,10 +26,8 @@ if (isset($_GET["pesan"])) { ?>
                         <th>ID</th>
                         <th>Pembayaran</th>
                         <th>Siswa</th>
-                        <th>Kelas</th>
                         <th>Nominal</th>
-                        <th>Tahun Akademik</th>
-                        <th>Kelas</th>
+                        <th>Metode Pembayaran</th>
                         <th>Status</th>
                     </tr>
                 </thead>
@@ -92,15 +43,24 @@ if (isset($_GET["pesan"])) { ?>
                         $nama_tahun = $pembayaran["tahun_akademik"];
                         $GetTahunAkademik = query("SELECT * FROM tb_tahun_akademik WHERE id='$nama_tahun'")[0];
 
+
                     ?>
                         <tr>
                             <td><?= $no++; ?></td>
                             <td><?= $trx_pembayaran["order_id"]; ?></td>
                             <td><?= $trx_pembayaran["nama_pembayaran"]; ?></td>
                             <td><?= $GetNamaUser["nama"]; ?></td>
-
+                            <td><?= $trx_pembayaran["nominal_pembayaran"]; ?></td>
+                            <td><?= $trx_pembayaran["metode_pembayaran"]; ?></td>
                             <td>
+                                <?php
 
+                                if (!empty($trx_pembayaran["transaction_id"])) {
+                                ?>
+                                    <span class="btn btn-sm btn-success"><i class="bi bi-check-circle-fill"></i></span>
+                                <?php } else { ?>
+                                    <span class="badge bg-danger"><i class="bi bi-x-circle-fill"></i></span>
+                                <?php } ?>
                             </td>
                         </tr>
                     <?php } ?>
